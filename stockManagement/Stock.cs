@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Net.Http.Headers;
 using System.Runtime.Intrinsics.Arm;
+using Microsoft.Office.Interop.Excel;
+using System.Runtime.ConstrainedExecution;
+using System.Drawing.Printing;
 
 namespace stockManagement
 {
@@ -50,7 +53,7 @@ namespace stockManagement
             SqlCommand cmd = new SqlCommand("SELECT * FROM CategoryTbl", Con);
             SqlDataReader sdr;
             sdr = cmd.ExecuteReader();
-            DataTable dt = new DataTable();
+            System.Data.DataTable dt = new System.Data.DataTable();
             dt.Columns.Add("CatId", typeof(int));
             dt.Load(sdr);
             CatCb.ValueMember = "CatName";
@@ -63,7 +66,7 @@ namespace stockManagement
             SqlCommand cmd = new SqlCommand("SELECT * FROM SuplierTbl", Con);
             SqlDataReader sdr;
             sdr = cmd.ExecuteReader();
-            DataTable dt = new DataTable();
+            System.Data.DataTable dt = new System.Data.DataTable();
             dt.Columns.Add("SupCode", typeof(int));
             dt.Load(sdr);
             SupCb.ValueMember = "SupName";
@@ -83,10 +86,6 @@ namespace stockManagement
         }
 
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mihai\OneDrive\Документы\StockDb.mdf;Integrated Security=True;Connect Timeout=30");
-        private void Stock_Load(object sender, EventArgs e)
-        {
-
-        }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
             if (PrNameTb.Text == "" || QtyTb.Text == "" || SpriceTb.Text == "" || BPriceTb.Text == "" || SupCb.SelectedIndex == -1 || (CatCb.SelectedIndex == -1))
@@ -273,6 +272,69 @@ namespace stockManagement
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             ShowProductByName(textBox1.Text);
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            ShowProduct();
+            GetCategories();
+            GetSupliers();
+            textBox1.Text = "";
+            DeleteText();
+        }
+
+        private void srchBetweenDatesBtn_Click(object sender, EventArgs e)
+        {
+            System.Data.DataTable dt = new System.Data.DataTable();
+            Con.Open();
+            string sql = "select * from TProductTbl where PrDate Between @date1 and @date2";
+            SqlDataAdapter da = new SqlDataAdapter(sql, Con);
+            da.SelectCommand.Parameters.AddWithValue("@date1", firstDateForFiltering.Value);
+            da.SelectCommand.Parameters.AddWithValue("@date2", secondDateForFiltering.Value);
+            da.Fill(dt);
+            Con.Close();
+            ProductDGV.DataSource = dt;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application apps = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook workbook = apps.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel.Worksheet worksheet = workbook.Sheets["Sheet1"];
+            
+            apps.Visible= true;
+
+            worksheet = workbook.ActiveSheet;
+            worksheet.Name = "Exported DVG";
+
+            object clr = System.Drawing.ColorTranslator.ToOle(Color.Green);
+            
+
+            for (int i = 1; i < ProductDGV.Columns.Count + 1; i++) 
+            {
+                worksheet.Cells[1, i] = ProductDGV.Columns[i - 1].HeaderText;
+                worksheet.Cells[1, i].Interior.Color = clr;
+            }
+
+            for(int i = 0; i < ProductDGV.Rows.Count - 1; i++) 
+            {
+                for(int j = 0; j < ProductDGV.Columns.Count; j++) 
+                {
+                    worksheet.Cells[i + 2, j + 1] = ProductDGV.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+            try
+            {
+                workbook.SaveAs("D:\\OUTPUT.xlsx", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+            } catch { }
+
+            if(checkBox1.Checked)
+            {
+                workbook.PrintOut(
+                Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            }
         }
     }
 }

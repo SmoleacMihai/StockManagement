@@ -65,9 +65,20 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.firstDateForFiltering = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.srchBtn = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.srchBetweenDatesBtn = new System.Windows.Forms.Button();
+            this.secondDateForFiltering = new System.Windows.Forms.DateTimePicker();
+            this.label20 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDGV)).BeginInit();
@@ -79,12 +90,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // PrDate
             // 
             this.PrDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.PrDate.Location = new System.Drawing.Point(111, 437);
+            this.PrDate.Location = new System.Drawing.Point(44, 358);
             this.PrDate.Name = "PrDate";
             this.PrDate.Size = new System.Drawing.Size(146, 27);
             this.PrDate.TabIndex = 17;
@@ -93,7 +107,7 @@
             // 
             this.QtyTb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.QtyTb.ForeColor = System.Drawing.Color.Crimson;
-            this.QtyTb.Location = new System.Drawing.Point(112, 261);
+            this.QtyTb.Location = new System.Drawing.Point(45, 182);
             this.QtyTb.Name = "QtyTb";
             this.QtyTb.PlaceholderText = "Quantity";
             this.QtyTb.Size = new System.Drawing.Size(301, 34);
@@ -103,7 +117,7 @@
             // 
             this.SpriceTb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SpriceTb.ForeColor = System.Drawing.Color.Crimson;
-            this.SpriceTb.Location = new System.Drawing.Point(112, 365);
+            this.SpriceTb.Location = new System.Drawing.Point(45, 286);
             this.SpriceTb.Name = "SpriceTb";
             this.SpriceTb.PlaceholderText = "Selling Price";
             this.SpriceTb.Size = new System.Drawing.Size(301, 34);
@@ -113,7 +127,7 @@
             // 
             this.BPriceTb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BPriceTb.ForeColor = System.Drawing.Color.Crimson;
-            this.BPriceTb.Location = new System.Drawing.Point(112, 315);
+            this.BPriceTb.Location = new System.Drawing.Point(45, 236);
             this.BPriceTb.Name = "BPriceTb";
             this.BPriceTb.PlaceholderText = "Buying Price";
             this.BPriceTb.Size = new System.Drawing.Size(301, 34);
@@ -124,7 +138,7 @@
             this.CatCb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CatCb.ForeColor = System.Drawing.Color.Crimson;
             this.CatCb.FormattingEnabled = true;
-            this.CatCb.Location = new System.Drawing.Point(111, 211);
+            this.CatCb.Location = new System.Drawing.Point(44, 132);
             this.CatCb.Name = "CatCb";
             this.CatCb.Size = new System.Drawing.Size(301, 36);
             this.CatCb.TabIndex = 13;
@@ -134,7 +148,7 @@
             // 
             this.PrNameTb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.PrNameTb.ForeColor = System.Drawing.Color.Crimson;
-            this.PrNameTb.Location = new System.Drawing.Point(111, 160);
+            this.PrNameTb.Location = new System.Drawing.Point(44, 81);
             this.PrNameTb.Name = "PrNameTb";
             this.PrNameTb.PlaceholderText = "Product Name";
             this.PrNameTb.Size = new System.Drawing.Size(301, 34);
@@ -202,7 +216,7 @@
             this.ProductDGV.Name = "ProductDGV";
             this.ProductDGV.RowHeadersWidth = 51;
             this.ProductDGV.RowTemplate.Height = 29;
-            this.ProductDGV.Size = new System.Drawing.Size(925, 723);
+            this.ProductDGV.Size = new System.Drawing.Size(1011, 908);
             this.ProductDGV.TabIndex = 22;
             this.ProductDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductDGV_CellContentClick);
             // 
@@ -392,7 +406,7 @@
             this.SupCb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SupCb.ForeColor = System.Drawing.Color.Crimson;
             this.SupCb.FormattingEnabled = true;
-            this.SupCb.Location = new System.Drawing.Point(111, 485);
+            this.SupCb.Location = new System.Drawing.Point(44, 406);
             this.SupCb.Name = "SupCb";
             this.SupCb.Size = new System.Drawing.Size(301, 36);
             this.SupCb.TabIndex = 24;
@@ -403,7 +417,7 @@
             this.SaveBtn.BackColor = System.Drawing.Color.Crimson;
             this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SaveBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.SaveBtn.Location = new System.Drawing.Point(113, 563);
+            this.SaveBtn.Location = new System.Drawing.Point(44, 464);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(143, 43);
             this.SaveBtn.TabIndex = 25;
@@ -416,7 +430,7 @@
             this.EditBtn.BackColor = System.Drawing.Color.Crimson;
             this.EditBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.EditBtn.Location = new System.Drawing.Point(262, 563);
+            this.EditBtn.Location = new System.Drawing.Point(193, 464);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(152, 43);
             this.EditBtn.TabIndex = 26;
@@ -429,7 +443,7 @@
             this.DeleteBtn.BackColor = System.Drawing.Color.Crimson;
             this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DeleteBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.DeleteBtn.Location = new System.Drawing.Point(196, 611);
+            this.DeleteBtn.Location = new System.Drawing.Point(127, 512);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(135, 43);
             this.DeleteBtn.TabIndex = 27;
@@ -451,7 +465,7 @@
             // ExDate
             // 
             this.ExDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ExDate.Location = new System.Drawing.Point(268, 437);
+            this.ExDate.Location = new System.Drawing.Point(201, 358);
             this.ExDate.Name = "ExDate";
             this.ExDate.Size = new System.Drawing.Size(146, 27);
             this.ExDate.TabIndex = 29;
@@ -459,7 +473,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(111, 415);
+            this.label11.Location = new System.Drawing.Point(44, 336);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(117, 20);
             this.label11.TabIndex = 30;
@@ -468,7 +482,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(268, 415);
+            this.label12.Location = new System.Drawing.Point(201, 336);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(112, 20);
             this.label12.TabIndex = 31;
@@ -477,77 +491,201 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(459, 315);
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.ForeColor = System.Drawing.Color.Crimson;
+            this.label13.Location = new System.Drawing.Point(26, 149);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(182, 20);
+            this.label13.Size = new System.Drawing.Size(312, 28);
             this.label13.TabIndex = 33;
-            this.label13.Text = "Filters by production date:";
+            this.label13.Text = "Search between receiving dates";
             // 
-            // dateTimePicker1
+            // firstDateForFiltering
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(459, 338);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(182, 27);
-            this.dateTimePicker1.TabIndex = 32;
+            this.firstDateForFiltering.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.firstDateForFiltering.Location = new System.Drawing.Point(26, 180);
+            this.firstDateForFiltering.Name = "firstDateForFiltering";
+            this.firstDateForFiltering.Size = new System.Drawing.Size(166, 27);
+            this.firstDateForFiltering.TabIndex = 32;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(459, 155);
+            this.textBox1.Location = new System.Drawing.Point(26, 79);
             this.textBox1.Name = "textBox1";
             this.textBox1.PlaceholderText = "Search for product";
-            this.textBox1.Size = new System.Drawing.Size(196, 34);
+            this.textBox1.Size = new System.Drawing.Size(323, 34);
             this.textBox1.TabIndex = 34;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // srchBtn
+            // label14
             // 
-            this.srchBtn.BackColor = System.Drawing.Color.Crimson;
-            this.srchBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.srchBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.srchBtn.Location = new System.Drawing.Point(674, 151);
-            this.srchBtn.Name = "srchBtn";
-            this.srchBtn.Size = new System.Drawing.Size(152, 43);
-            this.srchBtn.TabIndex = 35;
-            this.srchBtn.Text = "Search";
-            this.srchBtn.UseVisualStyleBackColor = false;
-            this.srchBtn.Click += new System.EventHandler(this.srchBtn_Click);
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.ForeColor = System.Drawing.Color.Crimson;
+            this.label14.Location = new System.Drawing.Point(26, 48);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(166, 28);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "Search by Name";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.EditBtn);
+            this.panel3.Controls.Add(this.PrNameTb);
+            this.panel3.Controls.Add(this.CatCb);
+            this.panel3.Controls.Add(this.BPriceTb);
+            this.panel3.Controls.Add(this.SpriceTb);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.QtyTb);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.PrDate);
+            this.panel3.Controls.Add(this.ExDate);
+            this.panel3.Controls.Add(this.SupCb);
+            this.panel3.Controls.Add(this.SaveBtn);
+            this.panel3.Controls.Add(this.DeleteBtn);
+            this.panel3.Location = new System.Drawing.Point(50, 160);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(386, 577);
+            this.panel3.TabIndex = 36;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label16.ForeColor = System.Drawing.Color.Crimson;
+            this.label16.Location = new System.Drawing.Point(112, 22);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(147, 28);
+            this.label16.TabIndex = 37;
+            this.label16.Text = "Add a Product";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.checkBox1);
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.pictureBox9);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.srchBetweenDatesBtn);
+            this.panel5.Controls.Add(this.secondDateForFiltering);
+            this.panel5.Controls.Add(this.label20);
+            this.panel5.Controls.Add(this.label14);
+            this.panel5.Controls.Add(this.firstDateForFiltering);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Location = new System.Drawing.Point(480, 162);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(371, 575);
+            this.panel5.TabIndex = 37;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Crimson;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(58, 284);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(269, 43);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Export to Excel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Crimson;
+            this.panel7.Location = new System.Drawing.Point(26, 265);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(323, 3);
+            this.panel7.TabIndex = 45;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox9.InitialImage")));
+            this.pictureBox9.Location = new System.Drawing.Point(306, 508);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(43, 45);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 41;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Crimson;
+            this.panel6.Location = new System.Drawing.Point(26, 130);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(323, 3);
+            this.panel6.TabIndex = 40;
+            // 
+            // srchBetweenDatesBtn
+            // 
+            this.srchBetweenDatesBtn.BackColor = System.Drawing.Color.Crimson;
+            this.srchBetweenDatesBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.srchBetweenDatesBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.srchBetweenDatesBtn.Location = new System.Drawing.Point(112, 213);
+            this.srchBetweenDatesBtn.Name = "srchBetweenDatesBtn";
+            this.srchBetweenDatesBtn.Size = new System.Drawing.Size(143, 43);
+            this.srchBetweenDatesBtn.TabIndex = 38;
+            this.srchBetweenDatesBtn.Text = "Search";
+            this.srchBetweenDatesBtn.UseVisualStyleBackColor = false;
+            this.srchBetweenDatesBtn.Click += new System.EventHandler(this.srchBetweenDatesBtn_Click);
+            // 
+            // secondDateForFiltering
+            // 
+            this.secondDateForFiltering.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.secondDateForFiltering.Location = new System.Drawing.Point(198, 180);
+            this.secondDateForFiltering.Name = "secondDateForFiltering";
+            this.secondDateForFiltering.Size = new System.Drawing.Size(151, 27);
+            this.secondDateForFiltering.TabIndex = 39;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label20.ForeColor = System.Drawing.Color.Crimson;
+            this.label20.Location = new System.Drawing.Point(141, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(81, 28);
+            this.label20.TabIndex = 38;
+            this.label20.Text = "Service";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.ForeColor = System.Drawing.Color.Crimson;
+            this.checkBox1.Location = new System.Drawing.Point(131, 334);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(124, 32);
+            this.checkBox1.TabIndex = 47;
+            this.checkBox1.Text = "And print";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.srchBtn);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.ExDate);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.DeleteBtn);
-            this.Controls.Add(this.EditBtn);
-            this.Controls.Add(this.SaveBtn);
-            this.Controls.Add(this.SupCb);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ProductDGV);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.PrDate);
-            this.Controls.Add(this.QtyTb);
-            this.Controls.Add(this.SpriceTb);
-            this.Controls.Add(this.BPriceTb);
-            this.Controls.Add(this.CatCb);
-            this.Controls.Add(this.PrNameTb);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Stock";
             this.Text = "Stock";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Stock_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -561,6 +699,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,8 +747,19 @@
         private PictureBox pictureBox8;
         private Label label15;
         private Label label13;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker firstDateForFiltering;
         private TextBox textBox1;
-        private Button srchBtn;
+        private Label label14;
+        private Panel panel3;
+        private Label label16;
+        private Panel panel5;
+        private PictureBox pictureBox9;
+        private Panel panel6;
+        private Button srchBetweenDatesBtn;
+        private DateTimePicker secondDateForFiltering;
+        private Label label20;
+        private Panel panel7;
+        private Button button1;
+        private CheckBox checkBox1;
     }
 }
