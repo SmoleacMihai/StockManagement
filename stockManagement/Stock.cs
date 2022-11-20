@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Net.Http.Headers;
+using System.Runtime.Intrinsics.Arm;
 
 namespace stockManagement
 {
@@ -18,6 +19,8 @@ namespace stockManagement
         {
             InitializeComponent();
             ShowProduct();
+            GetCategories();
+            GetSupliers();
         }
         private void ShowProduct()
         {
@@ -28,6 +31,43 @@ namespace stockManagement
             var ds = new DataSet();
             sda.Fill(ds);
             ProductDGV.DataSource = ds.Tables[0];
+            Con.Close();
+        }
+        private void ShowProductByName(string productName)
+        {
+            Con.Open();
+            string Querry = "SELECT * FROM TProductTbl\nWHERE PrName LIKE '" + productName + "%' ";
+            SqlDataAdapter sda = new SqlDataAdapter(Querry, Con);
+            SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            ProductDGV.DataSource = ds.Tables[0];
+            Con.Close();
+        }
+        private void GetCategories()
+        {
+            Con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM CategoryTbl", Con);
+            SqlDataReader sdr;
+            sdr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("CatId", typeof(int));
+            dt.Load(sdr);
+            CatCb.ValueMember = "CatName";
+            CatCb.DataSource = dt;
+            Con.Close();
+        }
+        private void GetSupliers()
+        {
+            Con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM SuplierTbl", Con);
+            SqlDataReader sdr;
+            sdr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("SupCode", typeof(int));
+            dt.Load(sdr);
+            SupCb.ValueMember = "SupName";
+            SupCb.DataSource = dt;
             Con.Close();
         }
         private void DeleteText()
@@ -60,13 +100,13 @@ namespace stockManagement
                     Con.Open();
                     SqlCommand cmd = new SqlCommand("insert into TProductTbl values(@PN, @Pcat, @Pqty, @BPr, @SPr, @PDate, @ExDate, @Sup, @G)", Con);
                     cmd.Parameters.AddWithValue("@PN", PrNameTb.Text);
-                    cmd.Parameters.AddWithValue("@PCat", CatCb.SelectedIndex.ToString());
+                    cmd.Parameters.AddWithValue("@PCat", CatCb.SelectedValue.ToString());
                     cmd.Parameters.AddWithValue("@Pqty", QtyTb.Text);
                     cmd.Parameters.AddWithValue("@BPr", BPriceTb.Text);
                     cmd.Parameters.AddWithValue("@SPr", SpriceTb.Text);
                     cmd.Parameters.AddWithValue("@PDate", PrDate.Value.Date);
                     cmd.Parameters.AddWithValue("@ExDate", ExDate.Value.Date);
-                    cmd.Parameters.AddWithValue("@Sup", SupCb.SelectedIndex.ToString());
+                    cmd.Parameters.AddWithValue("@Sup", SupCb.SelectedValue.ToString());
                     cmd.Parameters.AddWithValue("@G", Gain);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Product saved!!!");
@@ -114,13 +154,13 @@ namespace stockManagement
                     Con.Open();
                     SqlCommand cmd = new SqlCommand("update TProductTbl set PrName=@PN, PrCategory=@Pcat, PrQty=@Pqty, BpPrice=@BPr, SPrice=@SPr, PrDate=@PDate, ExDate=@ExDate, SSup=@Sup, Gain=@G where PrCode=@PrKey", Con);
                     cmd.Parameters.AddWithValue("@PN", PrNameTb.Text);
-                    cmd.Parameters.AddWithValue("@PCat", CatCb.SelectedIndex.ToString());
+                    cmd.Parameters.AddWithValue("@PCat", CatCb.SelectedValue.ToString());
                     cmd.Parameters.AddWithValue("@Pqty", QtyTb.Text);
                     cmd.Parameters.AddWithValue("@BPr", BPriceTb.Text);
                     cmd.Parameters.AddWithValue("@SPr", SpriceTb.Text);
                     cmd.Parameters.AddWithValue("@PDate", PrDate.Value.Date);
                     cmd.Parameters.AddWithValue("@ExDate", ExDate.Value.Date);
-                    cmd.Parameters.AddWithValue("@Sup", SupCb.SelectedIndex.ToString());
+                    cmd.Parameters.AddWithValue("@Sup", SupCb.SelectedValue.ToString());
                     cmd.Parameters.AddWithValue("@G", Gain);
                     cmd.Parameters.AddWithValue("@PrKey", key);
                     cmd.ExecuteNonQuery();
@@ -175,6 +215,64 @@ namespace stockManagement
                 // Use this since we are a console app
                 System.Environment.Exit(1);
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Category Obj = new Category();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Customers Obj = new Customers();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            Supliers Obj = new Supliers();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            Orders Obj = new Orders();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void srchBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Con.Open();
+                string Querry = "SELECT * FROM TProductTbl";
+                SqlDataAdapter sda = new SqlDataAdapter(Querry, Con);
+                SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+                var ds = new DataSet();
+                sda.Fill(ds);
+                ProductDGV.DataSource = ds.Tables[0];
+                Con.Close();
+                //(ProductDGV.DataSource as DataTable).DefaultView.RowFilter = 
+                //    String.Format("PrName like '" + srchBtn.Text + "%' or SSup like '" + srchBtn.Text + "%' or PrCategory like '" + srchBtn.Text + "%'");
+                //ShowProduct();
+                //textBox1.Text = "";
+                //DeleteText();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            ShowProductByName(textBox1.Text);
         }
     }
 }

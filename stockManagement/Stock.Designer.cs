@@ -64,6 +64,10 @@
             this.ExDate = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.srchBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDGV)).BeginInit();
@@ -101,7 +105,7 @@
             this.SpriceTb.ForeColor = System.Drawing.Color.Crimson;
             this.SpriceTb.Location = new System.Drawing.Point(112, 365);
             this.SpriceTb.Name = "SpriceTb";
-            this.SpriceTb.PlaceholderText = "SPrice";
+            this.SpriceTb.PlaceholderText = "Selling Price";
             this.SpriceTb.Size = new System.Drawing.Size(301, 34);
             this.SpriceTb.TabIndex = 15;
             // 
@@ -111,7 +115,7 @@
             this.BPriceTb.ForeColor = System.Drawing.Color.Crimson;
             this.BPriceTb.Location = new System.Drawing.Point(112, 315);
             this.BPriceTb.Name = "BPriceTb";
-            this.BPriceTb.PlaceholderText = "BPrice";
+            this.BPriceTb.PlaceholderText = "Buying Price";
             this.BPriceTb.Size = new System.Drawing.Size(301, 34);
             this.BPriceTb.TabIndex = 14;
             // 
@@ -120,9 +124,6 @@
             this.CatCb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CatCb.ForeColor = System.Drawing.Color.Crimson;
             this.CatCb.FormattingEnabled = true;
-            this.CatCb.Items.AddRange(new object[] {
-            "Tech",
-            "Food"});
             this.CatCb.Location = new System.Drawing.Point(111, 211);
             this.CatCb.Name = "CatCb";
             this.CatCb.Size = new System.Drawing.Size(301, 36);
@@ -197,7 +198,7 @@
             this.ProductDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.ProductDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductDGV.GridColor = System.Drawing.Color.Crimson;
-            this.ProductDGV.Location = new System.Drawing.Point(968, 160);
+            this.ProductDGV.Location = new System.Drawing.Point(897, 160);
             this.ProductDGV.Name = "ProductDGV";
             this.ProductDGV.RowHeadersWidth = 51;
             this.ProductDGV.RowTemplate.Height = 29;
@@ -222,15 +223,15 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(968, 57);
+            this.panel2.Location = new System.Drawing.Point(886, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(952, 44);
+            this.panel2.Size = new System.Drawing.Size(1034, 44);
             this.panel2.TabIndex = 23;
             // 
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(844, 6);
+            this.pictureBox8.Location = new System.Drawing.Point(949, 6);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(27, 33);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -243,7 +244,7 @@
             this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.Crimson;
-            this.label15.Location = new System.Drawing.Point(877, 12);
+            this.label15.Location = new System.Drawing.Point(982, 12);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(48, 28);
             this.label15.TabIndex = 42;
@@ -253,7 +254,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(691, 3);
+            this.pictureBox7.Location = new System.Drawing.Point(796, 3);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(27, 33);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -263,9 +264,10 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.Crimson;
-            this.label10.Location = new System.Drawing.Point(724, 9);
+            this.label10.Location = new System.Drawing.Point(829, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 28);
             this.label10.TabIndex = 39;
@@ -274,7 +276,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(553, -2);
+            this.pictureBox6.Location = new System.Drawing.Point(658, -2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(39, 43);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -284,18 +286,20 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.Crimson;
-            this.label9.Location = new System.Drawing.Point(598, 9);
+            this.label9.Location = new System.Drawing.Point(703, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 28);
+            this.label9.Size = new System.Drawing.Size(87, 28);
             this.label9.TabIndex = 37;
-            this.label9.Text = "Suplier";
+            this.label9.Text = "Supliers";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(423, -2);
+            this.pictureBox5.Location = new System.Drawing.Point(528, -2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 43);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -305,18 +309,20 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.Crimson;
-            this.label8.Location = new System.Drawing.Point(468, 9);
+            this.label8.Location = new System.Drawing.Point(573, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 28);
             this.label8.TabIndex = 35;
             this.label8.Text = "Orders";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(275, -2);
+            this.pictureBox4.Location = new System.Drawing.Point(380, -2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 43);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -326,9 +332,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Crimson;
-            this.label7.Location = new System.Drawing.Point(320, 9);
+            this.label7.Location = new System.Drawing.Point(425, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 28);
             this.label7.TabIndex = 33;
@@ -337,7 +344,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(124, -2);
+            this.pictureBox3.Location = new System.Drawing.Point(189, -2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(39, 43);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -347,13 +354,15 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Crimson;
-            this.label6.Location = new System.Drawing.Point(169, 9);
+            this.label6.Location = new System.Drawing.Point(234, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 28);
+            this.label6.Size = new System.Drawing.Size(112, 28);
             this.label6.TabIndex = 31;
-            this.label6.Text = "Category";
+            this.label6.Text = "Categories";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox2
             // 
@@ -368,24 +377,21 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Crimson;
-            this.label5.Location = new System.Drawing.Point(67, 9);
+            this.label5.Location = new System.Drawing.Point(66, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 28);
+            this.label5.Size = new System.Drawing.Size(111, 28);
             this.label5.TabIndex = 29;
-            this.label5.Text = "User";
+            this.label5.Text = "Customers";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // SupCb
             // 
             this.SupCb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SupCb.ForeColor = System.Drawing.Color.Crimson;
             this.SupCb.FormattingEnabled = true;
-            this.SupCb.Items.AddRange(new object[] {
-            "CocaCola",
-            "Apple",
-            "Samsung",
-            "Lenova"});
             this.SupCb.Location = new System.Drawing.Point(111, 485);
             this.SupCb.Name = "SupCb";
             this.SupCb.Size = new System.Drawing.Size(301, 36);
@@ -436,7 +442,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Crimson;
-            this.label4.Location = new System.Drawing.Point(968, 129);
+            this.label4.Location = new System.Drawing.Point(897, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 28);
             this.label4.TabIndex = 28;
@@ -468,11 +474,55 @@
             this.label12.TabIndex = 31;
             this.label12.Text = "Expiration Date";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(459, 315);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(182, 20);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Filters by production date:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(459, 338);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(182, 27);
+            this.dateTimePicker1.TabIndex = 32;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(459, 155);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "Search for product";
+            this.textBox1.Size = new System.Drawing.Size(196, 34);
+            this.textBox1.TabIndex = 34;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // srchBtn
+            // 
+            this.srchBtn.BackColor = System.Drawing.Color.Crimson;
+            this.srchBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.srchBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.srchBtn.Location = new System.Drawing.Point(674, 151);
+            this.srchBtn.Name = "srchBtn";
+            this.srchBtn.Size = new System.Drawing.Size(152, 43);
+            this.srchBtn.TabIndex = 35;
+            this.srchBtn.Text = "Search";
+            this.srchBtn.UseVisualStyleBackColor = false;
+            this.srchBtn.Click += new System.EventHandler(this.srchBtn_Click);
+            // 
             // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.srchBtn);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.ExDate);
@@ -553,5 +603,9 @@
         private Label label12;
         private PictureBox pictureBox8;
         private Label label15;
+        private Label label13;
+        private DateTimePicker dateTimePicker1;
+        private TextBox textBox1;
+        private Button srchBtn;
     }
 }

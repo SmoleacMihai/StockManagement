@@ -88,7 +88,7 @@
             this.DeleteBtn.BackColor = System.Drawing.Color.Crimson;
             this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DeleteBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.DeleteBtn.Location = new System.Drawing.Point(170, 620);
+            this.DeleteBtn.Location = new System.Drawing.Point(204, 548);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(152, 43);
             this.DeleteBtn.TabIndex = 47;
@@ -101,7 +101,7 @@
             this.EditBtn.BackColor = System.Drawing.Color.Crimson;
             this.EditBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.EditBtn.Location = new System.Drawing.Point(242, 571);
+            this.EditBtn.Location = new System.Drawing.Point(276, 499);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(169, 43);
             this.EditBtn.TabIndex = 46;
@@ -114,7 +114,7 @@
             this.SaveBtn.BackColor = System.Drawing.Color.Crimson;
             this.SaveBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SaveBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.SaveBtn.Location = new System.Drawing.Point(81, 571);
+            this.SaveBtn.Location = new System.Drawing.Point(115, 499);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(160, 43);
             this.SaveBtn.TabIndex = 45;
@@ -125,7 +125,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(844, 6);
+            this.pictureBox8.Location = new System.Drawing.Point(890, 6);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(27, 33);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -138,7 +138,7 @@
             this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.Crimson;
-            this.label15.Location = new System.Drawing.Point(877, 12);
+            this.label15.Location = new System.Drawing.Point(923, 12);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(48, 28);
             this.label15.TabIndex = 42;
@@ -148,7 +148,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(691, 3);
+            this.pictureBox7.Location = new System.Drawing.Point(737, 3);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(27, 33);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -160,7 +160,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.Crimson;
-            this.label10.Location = new System.Drawing.Point(724, 9);
+            this.label10.Location = new System.Drawing.Point(770, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 28);
             this.label10.TabIndex = 39;
@@ -169,7 +169,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(553, -2);
+            this.pictureBox6.Location = new System.Drawing.Point(599, -2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(39, 43);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,7 +180,7 @@
             // 
             this.CustPhoneTb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CustPhoneTb.ForeColor = System.Drawing.Color.Crimson;
-            this.CustPhoneTb.Location = new System.Drawing.Point(80, 332);
+            this.CustPhoneTb.Location = new System.Drawing.Point(114, 260);
             this.CustPhoneTb.Name = "CustPhoneTb";
             this.CustPhoneTb.PlaceholderText = "Phone";
             this.CustPhoneTb.Size = new System.Drawing.Size(332, 34);
@@ -190,7 +190,7 @@
             // 
             this.CustAdressTb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CustAdressTb.ForeColor = System.Drawing.Color.Crimson;
-            this.CustAdressTb.Location = new System.Drawing.Point(80, 436);
+            this.CustAdressTb.Location = new System.Drawing.Point(114, 364);
             this.CustAdressTb.Multiline = true;
             this.CustAdressTb.Name = "CustAdressTb";
             this.CustAdressTb.PlaceholderText = "Adress";
@@ -201,7 +201,7 @@
             // 
             this.CustEmailTb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CustEmailTb.ForeColor = System.Drawing.Color.Crimson;
-            this.CustEmailTb.Location = new System.Drawing.Point(80, 386);
+            this.CustEmailTb.Location = new System.Drawing.Point(114, 314);
             this.CustEmailTb.Name = "CustEmailTb";
             this.CustEmailTb.PlaceholderText = "Email";
             this.CustEmailTb.Size = new System.Drawing.Size(332, 34);
@@ -215,7 +215,7 @@
             this.GenCb.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.GenCb.Location = new System.Drawing.Point(79, 282);
+            this.GenCb.Location = new System.Drawing.Point(113, 210);
             this.GenCb.Name = "GenCb";
             this.GenCb.Size = new System.Drawing.Size(332, 36);
             this.GenCb.TabIndex = 33;
@@ -226,16 +226,17 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.Crimson;
-            this.label9.Location = new System.Drawing.Point(598, 9);
+            this.label9.Location = new System.Drawing.Point(644, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 28);
+            this.label9.Size = new System.Drawing.Size(87, 28);
             this.label9.TabIndex = 37;
-            this.label9.Text = "Suplier";
+            this.label9.Text = "Supliers";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(423, -2);
+            this.pictureBox5.Location = new System.Drawing.Point(469, -2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(39, 43);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -247,7 +248,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.Crimson;
-            this.label8.Location = new System.Drawing.Point(468, 9);
+            this.label8.Location = new System.Drawing.Point(514, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 28);
             this.label8.TabIndex = 35;
@@ -256,7 +257,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(275, -2);
+            this.pictureBox4.Location = new System.Drawing.Point(321, -2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(39, 43);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -268,11 +269,12 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Crimson;
-            this.label7.Location = new System.Drawing.Point(320, 9);
+            this.label7.Location = new System.Drawing.Point(366, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 28);
             this.label7.TabIndex = 33;
             this.label7.Text = "Products";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // panel1
             // 
@@ -299,7 +301,7 @@
             // 
             this.CustNameTb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CustNameTb.ForeColor = System.Drawing.Color.Crimson;
-            this.CustNameTb.Location = new System.Drawing.Point(79, 231);
+            this.CustNameTb.Location = new System.Drawing.Point(113, 159);
             this.CustNameTb.Name = "CustNameTb";
             this.CustNameTb.PlaceholderText = "Customer Name";
             this.CustNameTb.Size = new System.Drawing.Size(332, 34);
@@ -308,7 +310,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(124, -2);
+            this.pictureBox3.Location = new System.Drawing.Point(170, -2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(39, 43);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -320,11 +322,12 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Crimson;
-            this.label6.Location = new System.Drawing.Point(169, 9);
+            this.label6.Location = new System.Drawing.Point(215, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 28);
+            this.label6.Size = new System.Drawing.Size(112, 28);
             this.label6.TabIndex = 31;
-            this.label6.Text = "Category";
+            this.label6.Text = "Categories";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -333,9 +336,9 @@
             this.label5.ForeColor = System.Drawing.Color.Crimson;
             this.label5.Location = new System.Drawing.Point(67, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 28);
+            this.label5.Size = new System.Drawing.Size(102, 28);
             this.label5.TabIndex = 29;
-            this.label5.Text = "User";
+            this.label5.Text = "Customer";
             // 
             // panel2
             // 
@@ -354,9 +357,9 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(948, 56);
+            this.panel2.Location = new System.Drawing.Point(817, 55);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(969, 44);
+            this.panel2.Size = new System.Drawing.Size(1100, 44);
             this.panel2.TabIndex = 43;
             // 
             // pictureBox2
@@ -440,6 +443,7 @@
             this.Name = "Customers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customers";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();

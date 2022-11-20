@@ -11,29 +11,37 @@ using System.Windows.Forms;
 
 namespace stockManagement
 {
-    public partial class Supliers : Form
+    public partial class Category : Form
     {
-        public Supliers()
+        public Category()
         {
             InitializeComponent();
-            ShowSuplier();
+            ShowCategory();
+            CountCat();
         }
-        private void ShowSuplier()
+        private void ShowCategory()
         {
             Con.Open();
-            string Querry = "SELECT * FROM SuplierTbl";
+            string Querry = "SELECT * FROM CategoryTbl";
             SqlDataAdapter sda = new SqlDataAdapter(Querry, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
             sda.Fill(ds);
-            SuplierDGV.DataSource = ds.Tables[0];
+            CategoryDGV.DataSource = ds.Tables[0];
+            Con.Close();
+        }
+        private void CountCat()
+        {
+            Con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT count(*) FROM CategoryTbl", Con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            CatNumLbl.Text = dt.Rows[0][0].ToString();
             Con.Close();
         }
         private void DeleteText()
         {
-            SupNameTb.Text = "";
-            SupPhoneTb.Text = "";
-            SupAdressTb.Text = "";
+            CategoryNameTb.Text = "";
         }
         SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Mihai\OneDrive\Документы\StockDb.mdf;Integrated Security=True;Connect Timeout=30");
         private void label15_Click(object sender, EventArgs e)
@@ -41,17 +49,19 @@ namespace stockManagement
             this.Close();
             if (System.Windows.Forms.Application.MessageLoop)
             {
+                // Use this since we are a WinForms app
                 System.Windows.Forms.Application.Exit();
             }
             else
             {
+                // Use this since we are a console app
                 System.Environment.Exit(1);
             }
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (SupNameTb.Text == "" || SupPhoneTb.Text == "" || SupAdressTb.Text == "")
+            if (CategoryNameTb.Text == "")
             {
                 MessageBox.Show("Missing Data");
             }
@@ -60,14 +70,13 @@ namespace stockManagement
                 try
                 {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("insert into SuplierTbl values(@SN, @SPhone, @SAdress)", Con);
-                    cmd.Parameters.AddWithValue("@SN", SupNameTb.Text);
-                    cmd.Parameters.AddWithValue("@SPhone", SupPhoneTb.Text);
-                    cmd.Parameters.AddWithValue("@SAdress", SupAdressTb.Text);
+                    SqlCommand cmd = new SqlCommand("insert into CategoryTbl values(@CN)", Con);
+                    cmd.Parameters.AddWithValue("@CN", CategoryNameTb.Text);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Suplier saved!!!");
+                    MessageBox.Show("Category saved!!!");
                     Con.Close();
-                    ShowSuplier();
+                    ShowCategory();
+                    CountCat();
                     DeleteText();
                 }
                 catch (Exception ex)
@@ -79,7 +88,7 @@ namespace stockManagement
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            if (SupNameTb.Text == "" || SupPhoneTb.Text == "" || SupAdressTb.Text == "")
+            if (CategoryNameTb.Text == "")
             {
                 MessageBox.Show("Missing Data");
             }
@@ -88,15 +97,14 @@ namespace stockManagement
                 try
                 {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("update SuplierTbl set SupName=@SN, SupPhone=@SPhone, SupAdd=@SAdress where SupCode=@SKey", Con);
-                    cmd.Parameters.AddWithValue("@SN", SupNameTb.Text);
-                    cmd.Parameters.AddWithValue("@SPhone", SupPhoneTb.Text);
-                    cmd.Parameters.AddWithValue("@SAdress", SupAdressTb.Text);
-                    cmd.Parameters.AddWithValue("@SKey", key);
+                    SqlCommand cmd = new SqlCommand("update CategoryTbl set CatName=@CN where CatId=@CKey", Con);
+                    cmd.Parameters.AddWithValue("@CN", CategoryNameTb.Text);
+                    cmd.Parameters.AddWithValue("@CKey", key);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Suplier Edited!!!");
+                    MessageBox.Show("Category Edited!!!");
                     Con.Close();
-                    ShowSuplier();
+                    ShowCategory();
+                    CountCat();
                     DeleteText();
                 }
                 catch (Exception ex)
@@ -110,19 +118,20 @@ namespace stockManagement
         {
             if (key == 0)
             {
-                MessageBox.Show("Select The Suplier", "Info");
+                MessageBox.Show("Select The Category", "Info");
             }
             else
             {
                 try
                 {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("delete from SuplierTbl where SupCode=@SKey", Con);
-                    cmd.Parameters.AddWithValue("@SKey", key);
+                    SqlCommand cmd = new SqlCommand("delete from CategoryTbl where CatId=@CKey", Con);
+                    cmd.Parameters.AddWithValue("@CKey", key);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show(@"Suplier Deleted!");
+                    MessageBox.Show(@"Category Deleted!");
                     Con.Close();
-                    ShowSuplier();
+                    ShowCategory();
+                    CountCat();
                     DeleteText();
                 }
                 catch (Exception Ex)
@@ -131,20 +140,26 @@ namespace stockManagement
                 }
             }
         }
-        private void SuplierDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void CategoryDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            SuplierDGV.ReadOnly = true;
-            SupNameTb.Text = SuplierDGV.Rows[e.RowIndex].Cells["SupName"].Value.ToString();
-            SupPhoneTb.Text = SuplierDGV.Rows[e.RowIndex].Cells["SupPhone"].Value.ToString();
-            SupAdressTb.Text = SuplierDGV.Rows[e.RowIndex].Cells["SupAdd"].Value.ToString();
-            if (SupNameTb.Text == "")
+            CategoryDGV.ReadOnly = true;
+            CategoryNameTb.Text = CategoryDGV.Rows[e.RowIndex].Cells["CatName"].Value.ToString();
+            if (CategoryNameTb.Text == "")
             {
                 key = e.RowIndex;
             }
             else
             {
-                key = Convert.ToInt32(SuplierDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
+                key = Convert.ToInt32(CategoryDGV.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            Supliers Obj = new Supliers();
+            Obj.Show();
+            this.Hide();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -154,18 +169,16 @@ namespace stockManagement
             this.Hide();
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-            Category Obj = new Category();
-            Obj.Show();
-            this.Hide();
-        }
-
         private void label7_Click(object sender, EventArgs e)
         {
             Stock Obj = new Stock();
             Obj.Show();
             this.Hide();
+        }
+
+        private void Category_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

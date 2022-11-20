@@ -159,5 +159,26 @@ namespace stockManagement
                 }
             }
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            Supliers Obj = new Supliers();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Category Obj = new Category();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Stock Obj = new Stock();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }
